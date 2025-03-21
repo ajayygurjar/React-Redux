@@ -14,11 +14,11 @@ const Counter = () => {
   dispatch({type:'decrement'})
  };
  const incrementBy5=()=>{
-  dispatch({type:'IncrementBy5'})
+  dispatch({type:'IncrementBy',amount:5})
  };
  
  const decrementBy5=()=>{
-  dispatch({type:'DecrementBy5'})
+  dispatch({type:'DecrementBy',amount:5} )
  };
 
 

@@ -7,11 +7,11 @@ const counterReducer=(state={counter:0},action)=>{
     if(action.type==='decrement'){
         return {counter:state.counter -1}
     }
-    if(action.type==='IncrementBy5'){
-        return {counter:state.counter + 5}
+    if(action.type==='IncrementBy'){
+        return {counter:state.counter + action.amount}
     }
     if(action.type==='DecrementBy5'){
-        return {counter:state.counter - 5}
+        return {counter:state.counter - action.amount}
     }
 
     return state;
