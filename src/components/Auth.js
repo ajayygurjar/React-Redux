@@ -1,24 +1,24 @@
 import classes from './Auth.module.css';
-import { useSelector,useDispatch } from 'react-redux';
-import { authActions } from '../store';
-import UserProfile from './UserProfile';
+import { useDispatch } from 'react-redux';
+import { authActions } from '../store/auth';
+
 
 
 const Auth = () => {
 
 
   const dispatch=useDispatch()
-  const authState=useSelector((state)=>state.auth.isAuthenticated)
+  
 
   const toggleState=(e)=>{
     e.preventDefault();
     dispatch(authActions.login())
   }
   return (<>
-  {!authState && (
+  
     <main className={classes.auth}>
       <section>
-        <form>
+        <form onSubmit={toggleState}>
           <div className={classes.control}>
             <label htmlFor='email'>Email</label>
             <input type='email' id='email' />
@@ -27,11 +27,10 @@ const Auth = () => {
             <label htmlFor='password'>Password</label>
             <input type='password' id='password' />
           </div>
-          <button onClick={toggleState}>Login</button>
+          <button >Login</button>
         </form>
       </section>
-    </main>)}
-    {authState&&<UserProfile/>}
+    </main>
     </>
   );
 };
