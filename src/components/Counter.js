@@ -8,13 +8,13 @@ const Counter = () => {
 
   const dispatch=useDispatch();
 
- const counter = useSelector(state=>state.counter)
- const show=useSelector(state=>state.showCounter)
+ const counter = useSelector(state=>state.counter.counter)
+ const show=useSelector(state=>state.counter.showCounter)
  const incrementHandler=()=>{
   dispatch(counterActions.increment())
  };
  const decrementHandler=()=>{
-  dispatch(counterActions.decrement)
+  dispatch(counterActions.decrement())
  };
  const incrementBy5=()=>{
   dispatch(counterActions.IncrementBy(5)) //{ type:SOME_UNIQUE_IDENTIFIER,payload:5}
@@ -27,7 +27,7 @@ const Counter = () => {
 
 
   const toggleCounterHandler = () => {
-    dispatch(counterActions.toggle)
+    dispatch(counterActions.toggle())
   };
 
   return (
